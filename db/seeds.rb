@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# rails db:seed で反映
+
+Report.create!(
+    age: 'yyyy',
+    sex: 'hhhh',
+    comment: 'aaaa',
+    user_id: 1,
+    recipe_id: 1
+ )
+ 
