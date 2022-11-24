@@ -9,10 +9,10 @@
 # rails db:seed で反映
 
 Report.create!(
-    age: 'yyyy',
+    {age: 'yyyy',
     sex: 'hhhh',
     comment: 'aaaa',
     user_id: 1,
-    recipe_id: 1
+    recipe_id: 1}
  )
  
