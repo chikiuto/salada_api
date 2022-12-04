@@ -1,14 +1,11 @@
 class RecipesController < ApplicationController
 	def index
-		if params[:zairyou]
-			@recipes = Recipe.where("material LIKE ?", "%#{params[:zairyou]}%")
+		if params[:jikan]
+			@recipes = Recipe.where("indication LIKE ?", "%#{params[:jikan]}%")
+			if params[:zairyou]
+				@recipes = @recipes.where("material LIKE ?", "%#{params[:zairyou]}%")
+			end
 			render json: @recipes
-			if params[:jikan]
-				@recipes = @recipes.where("indication LIKE ?", "%#{params[:jikan]}%")
-				render json: @recipes
-		  end
 		end
-		# @recipes = Recipe.all.order(created_at: :desc)
-		# render json: @recipes
 	end
 end
