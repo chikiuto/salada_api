@@ -1,0 +1,21 @@
+databases:
+  - name: Salada_api
+    databaseName: sarada_api
+    user: sarada_admin
+    region: singapore
+
+services:
+  - type: web
+    name: sarada_api
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Salada_api
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
