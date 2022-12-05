@@ -21,7 +21,8 @@
 
 # whenever 定期実行
 # cronを実行する環境変数(:development, :product, :test)
-rails_env = ENV['RAILS_ENV'] || :product
+# rails_env = ENV['RAILS_ENV'] || :production
+rails_env = ENV['RAILS_ENV'] || :development
 
 # Rails.root(Railsメソッド)を使用するために必要
 require File.expand_path(File.dirname(__FILE__) + '/environment')
@@ -42,7 +43,7 @@ set :job_template, "/bin/zsh -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
 # 毎日実行
-every 1.day, at: '8:58 pm' do
+every 1.day, at: '9:32 pm' do
   # rake 'ファイル名':タスク名'
   rake 'bat:update_category_table'
 end

@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   database: salada_api_production
-  username: salada_api
+  username: tokichi
   password: <%= ENV["SALADA_API_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
