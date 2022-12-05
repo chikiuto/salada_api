@@ -25,5 +25,9 @@ module SaladaApi
     config.api_only = true
 
     config.hosts << '.onrender.com'
+
+    # /libファイル以下を自動でロード
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.enable_dependency_loading = true
   end
 end
