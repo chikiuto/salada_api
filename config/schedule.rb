@@ -43,7 +43,7 @@ set :job_template, "/bin/zsh -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
 # 毎日実行
-every 1.day, at: '9:45 pm' do
+every 1.day, at: '9:47 pm' do
   # rake 'ファイル名':タスク名'
   rake 'bat:update_category_table'
 end
