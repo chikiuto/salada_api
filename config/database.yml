@@ -84,3 +84,4 @@ production:
   database: salada_api_production
   username: salada_api
   password: <%= ENV["SALADA_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
