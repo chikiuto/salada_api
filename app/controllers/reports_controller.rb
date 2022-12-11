@@ -7,6 +7,5 @@ class ReportsController < ApplicationController
             recipe_id: params[:recipe_id],
             user_id: params[:user_id],
         )
-        # redirect_to "http://localhost:3000/"
     end
 end
