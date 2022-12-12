@@ -29,5 +29,9 @@ module SaladaApi
     # /libファイル以下を自動でロード
     config.autoload_paths += %W(#{config.root}/lib)
     config.enable_dependency_loading = true
+
+    config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+
   end
 end
